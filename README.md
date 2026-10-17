@@ -1,4 +1,4 @@
-# ME2 Voice Control — ASTRA
+# AI231 ME2 Voice Control — ASTRA
 
 ASTRA is an on-device Raspberry Pi voice assistant with an **Astra** wake-word
 verifier and a CRNN-BiGRU voice-command model. Inference uses ONNX Runtime on
