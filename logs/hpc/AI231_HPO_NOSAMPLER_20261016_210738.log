@@ -1,0 +1,99 @@
+[hpo] config=configs/ai231_hpo_nosampler.yaml experiment=AI231_HPO_NOSAMPLER_20261016_210738 gpu=4 started=2026-10-16T21:07:38+08:00
+[train] device = cuda
+[data] ai231_commands_v1: 16426 usable clips
+[data] split: train=10071 val=1662 test=4693 | speakers train/val/test = 558/99/214
+[train] model = crnn_bigru  params = 1,349,404
+Epoch 1/80  Train Loss: 4.2756  Val Loss: 3.7619  Val Acc: 0.0722  Val MacroF1: 0.0345
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 2/80  Train Loss: 3.2175  Val Loss: 2.5401  Val Acc: 0.3592  Val MacroF1: 0.2944
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 3/80  Train Loss: 1.9180  Val Loss: 1.5663  Val Acc: 0.6191  Val MacroF1: 0.5933
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 4/80  Train Loss: 1.1588  Val Loss: 1.1045  Val Acc: 0.7323  Val MacroF1: 0.7357
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 5/80  Train Loss: 0.8143  Val Loss: 0.9539  Val Acc: 0.7750  Val MacroF1: 0.7725
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 6/80  Train Loss: 0.6191  Val Loss: 0.8420  Val Acc: 0.7846  Val MacroF1: 0.7902
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 7/80  Train Loss: 0.4996  Val Loss: 0.7752  Val Acc: 0.8039  Val MacroF1: 0.8004
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 8/80  Train Loss: 0.4249  Val Loss: 0.7306  Val Acc: 0.8063  Val MacroF1: 0.8117
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 9/80  Train Loss: 0.3657  Val Loss: 0.6809  Val Acc: 0.8183  Val MacroF1: 0.8374
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 10/80  Train Loss: 0.3351  Val Loss: 0.6232  Val Acc: 0.8363  Val MacroF1: 0.8263
+Epoch 11/80  Train Loss: 0.2676  Val Loss: 0.6148  Val Acc: 0.8412  Val MacroF1: 0.8353
+Epoch 12/80  Train Loss: 0.2500  Val Loss: 0.5840  Val Acc: 0.8508  Val MacroF1: 0.8539
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 13/80  Train Loss: 0.2302  Val Loss: 0.5812  Val Acc: 0.8460  Val MacroF1: 0.8502
+Epoch 14/80  Train Loss: 0.1932  Val Loss: 0.6243  Val Acc: 0.8381  Val MacroF1: 0.8372
+Epoch 15/80  Train Loss: 0.1843  Val Loss: 0.5722  Val Acc: 0.8622  Val MacroF1: 0.8581
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 16/80  Train Loss: 0.1469  Val Loss: 0.5514  Val Acc: 0.8670  Val MacroF1: 0.8544
+Epoch 17/80  Train Loss: 0.1367  Val Loss: 0.5601  Val Acc: 0.8688  Val MacroF1: 0.8649
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 18/80  Train Loss: 0.1404  Val Loss: 0.5811  Val Acc: 0.8568  Val MacroF1: 0.8563
+Epoch 19/80  Train Loss: 0.1166  Val Loss: 0.5513  Val Acc: 0.8712  Val MacroF1: 0.8651
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 20/80  Train Loss: 0.1126  Val Loss: 0.6659  Val Acc: 0.8339  Val MacroF1: 0.8359
+Epoch 21/80  Train Loss: 0.1333  Val Loss: 0.5288  Val Acc: 0.8706  Val MacroF1: 0.8684
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 22/80  Train Loss: 0.0774  Val Loss: 0.5530  Val Acc: 0.8761  Val MacroF1: 0.8669
+Epoch 23/80  Train Loss: 0.0657  Val Loss: 0.5748  Val Acc: 0.8736  Val MacroF1: 0.8686
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 24/80  Train Loss: 0.0585  Val Loss: 0.5395  Val Acc: 0.8821  Val MacroF1: 0.8635
+Epoch 25/80  Train Loss: 0.0662  Val Loss: 0.5183  Val Acc: 0.8773  Val MacroF1: 0.8702
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 26/80  Train Loss: 0.0657  Val Loss: 0.5402  Val Acc: 0.8670  Val MacroF1: 0.8554
+Epoch 27/80  Train Loss: 0.0677  Val Loss: 0.5506  Val Acc: 0.8724  Val MacroF1: 0.8706
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 28/80  Train Loss: 0.0840  Val Loss: 0.5501  Val Acc: 0.8761  Val MacroF1: 0.8694
+Epoch 29/80  Train Loss: 0.0649  Val Loss: 0.5529  Val Acc: 0.8706  Val MacroF1: 0.8746
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 30/80  Train Loss: 0.0390  Val Loss: 0.5421  Val Acc: 0.8821  Val MacroF1: 0.8736
+Epoch 31/80  Train Loss: 0.0380  Val Loss: 0.5341  Val Acc: 0.8833  Val MacroF1: 0.8723
+Epoch 32/80  Train Loss: 0.0381  Val Loss: 0.5287  Val Acc: 0.8857  Val MacroF1: 0.8903
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 33/80  Train Loss: 0.0443  Val Loss: 0.5642  Val Acc: 0.8809  Val MacroF1: 0.8677
+Epoch 34/80  Train Loss: 0.0355  Val Loss: 0.5397  Val Acc: 0.8863  Val MacroF1: 0.8745
+Epoch 35/80  Train Loss: 0.0374  Val Loss: 0.5612  Val Acc: 0.8797  Val MacroF1: 0.8764
+Epoch 36/80  Train Loss: 0.0523  Val Loss: 0.5631  Val Acc: 0.8785  Val MacroF1: 0.8788
+Epoch 37/80  Train Loss: 0.0514  Val Loss: 0.5287  Val Acc: 0.8917  Val MacroF1: 0.8806
+Epoch 38/80  Train Loss: 0.0373  Val Loss: 0.5447  Val Acc: 0.8875  Val MacroF1: 0.8761
+Epoch 39/80  Train Loss: 0.0292  Val Loss: 0.5259  Val Acc: 0.8881  Val MacroF1: 0.8865
+Epoch 40/80  Train Loss: 0.0207  Val Loss: 0.5173  Val Acc: 0.8965  Val MacroF1: 0.8826
+Epoch 41/80  Train Loss: 0.0352  Val Loss: 0.5495  Val Acc: 0.8815  Val MacroF1: 0.8817
+Epoch 42/80  Train Loss: 0.0302  Val Loss: 0.5857  Val Acc: 0.8682  Val MacroF1: 0.8665
+Epoch 43/80  Train Loss: 0.0323  Val Loss: 0.5198  Val Acc: 0.8965  Val MacroF1: 0.8863
+Epoch 44/80  Train Loss: 0.0301  Val Loss: 0.5734  Val Acc: 0.8887  Val MacroF1: 0.8764
+Epoch 45/80  Train Loss: 0.0231  Val Loss: 0.5273  Val Acc: 0.9085  Val MacroF1: 0.8965
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 46/80  Train Loss: 0.0237  Val Loss: 0.5356  Val Acc: 0.8923  Val MacroF1: 0.8895
+Epoch 47/80  Train Loss: 0.0244  Val Loss: 0.5539  Val Acc: 0.8947  Val MacroF1: 0.8841
+Epoch 48/80  Train Loss: 0.0308  Val Loss: 0.5652  Val Acc: 0.8905  Val MacroF1: 0.8796
+Epoch 49/80  Train Loss: 0.0269  Val Loss: 0.5174  Val Acc: 0.8941  Val MacroF1: 0.8924
+Epoch 50/80  Train Loss: 0.0214  Val Loss: 0.5250  Val Acc: 0.8935  Val MacroF1: 0.8908
+Epoch 51/80  Train Loss: 0.0175  Val Loss: 0.5068  Val Acc: 0.9073  Val MacroF1: 0.9036
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 52/80  Train Loss: 0.0148  Val Loss: 0.5211  Val Acc: 0.9085  Val MacroF1: 0.9058
+  Best model saved -> models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+Epoch 53/80  Train Loss: 0.0142  Val Loss: 0.5323  Val Acc: 0.9055  Val MacroF1: 0.8938
+Epoch 54/80  Train Loss: 0.0120  Val Loss: 0.5154  Val Acc: 0.9055  Val MacroF1: 0.8909
+Epoch 55/80  Train Loss: 0.0150  Val Loss: 0.5236  Val Acc: 0.8965  Val MacroF1: 0.8933
+Epoch 56/80  Train Loss: 0.0151  Val Loss: 0.5245  Val Acc: 0.9019  Val MacroF1: 0.8988
+Epoch 57/80  Train Loss: 0.0156  Val Loss: 0.5243  Val Acc: 0.8995  Val MacroF1: 0.8946
+Epoch 58/80  Train Loss: 0.0149  Val Loss: 0.5401  Val Acc: 0.9031  Val MacroF1: 0.8962
+Epoch 59/80  Train Loss: 0.0173  Val Loss: 0.5069  Val Acc: 0.9019  Val MacroF1: 0.8881
+Epoch 60/80  Train Loss: 0.0143  Val Loss: 0.5253  Val Acc: 0.8971  Val MacroF1: 0.8840
+Epoch 61/80  Train Loss: 0.0155  Val Loss: 0.5124  Val Acc: 0.9043  Val MacroF1: 0.8909
+Epoch 62/80  Train Loss: 0.0156  Val Loss: 0.5196  Val Acc: 0.8989  Val MacroF1: 0.8941
+Epoch 63/80  Train Loss: 0.0143  Val Loss: 0.5066  Val Acc: 0.9013  Val MacroF1: 0.8894
+Epoch 64/80  Train Loss: 0.0109  Val Loss: 0.5255  Val Acc: 0.8983  Val MacroF1: 0.8841
+Epoch 65/80  Train Loss: 0.0105  Val Loss: 0.5080  Val Acc: 0.9013  Val MacroF1: 0.8914
+Epoch 66/80  Train Loss: 0.0099  Val Loss: 0.5018  Val Acc: 0.9049  Val MacroF1: 0.8928
+  Early stopping at epoch 66 (no improvement for 14).
+
+[train] Done. Best val macro-F1 = 0.9058
+[train] Checkpoint: /mnt/jfs_hpc/home/renz.joshua.labay/ME2-Voice-Control/models/checkpoints/AI231_HPO_NOSAMPLER_20261016_210738/best.pt
+[train] Results:    /mnt/jfs_hpc/home/renz.joshua.labay/ME2-Voice-Control/results/commands/AI231_HPO_NOSAMPLER_20261016_210738
+[hpo] validation-only completed=2026-10-16T21:23:49+08:00

@@ -1,0 +1,41 @@
+# Same data/model as dscnn_me2; direct-Bash HPC script supplies a timestamped id.
+model:
+  family: dscnn
+  features: logmel
+  n_mels: 40
+  blocks:
+    - {ch: 32, k: 5, pool: 2}
+    - {ch: 64, k: 5, pool: 2}
+    - {ch: 128, k: 5, pool: 2}
+  dropout: 0.25
+data:
+  datasets:
+    - {name: mark_m, path: data/processed/mark_m}
+    - {name: ambient_silence, path: data/processed/ambient_noise}
+    - {name: fsc_supplement, path: data/processed/fsc}
+    - {name: speech_commands_supplement, path: data/processed/speech_commands}
+  split:
+    method: official
+    val_frac: 0.15
+    test_frac: 0.15
+    seed: 42
+    feature_cache: {enabled: true, path: data/cache/hpc_logmel}
+training:
+  seed: 42
+  epochs: 80
+  batch_size: 128
+  learning_rate: 0.001
+  optimizer: adam
+  weight_decay: 0.0001
+  early_stopping_patience: 12
+  lr_scheduler: cosine
+  class_weight: balanced
+  gradient_clip_norm: 5.0
+  device: auto
+  num_workers: 8
+  # Cached base features replace slow per-epoch waveform augmentation on HPC.
+  augmentation: {enabled: false}
+output:
+  checkpoint_dir: models/checkpoints
+  results_dir: results/hpc
+  exp_id: EXP_DSCNN_HPC

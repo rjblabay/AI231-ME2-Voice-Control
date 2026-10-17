@@ -1,0 +1,8 @@
+{
+  "threshold": 0.715,
+  "accuracy": 0.9844,
+  "macro_f1": 0.4961,
+  "astra_precision": 0.0,
+  "astra_recall": 0.0,
+  "val_macro_f1": 1.0
+}

@@ -1,0 +1,15 @@
+{
+  "exp_id": "ASTRA_CRNN_BIGRU_VERIFIER_20261016_184000",
+  "family": "crnn_bigru_verifier",
+  "params": 645291,
+  "best_val_macro_f1": 1.0,
+  "selection_metric": "val_loss",
+  "best_selection": 0.00141,
+  "epochs_run": 80,
+  "sizes": {
+    "train": 314,
+    "val": 64,
+    "test": 64
+  },
+  "device": "cuda"
+}

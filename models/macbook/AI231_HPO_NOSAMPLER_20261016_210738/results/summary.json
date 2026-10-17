@@ -1,0 +1,15 @@
+{
+  "exp_id": "AI231_HPO_NOSAMPLER_20261016_210738",
+  "family": "crnn_bigru",
+  "params": 1349404,
+  "best_val_macro_f1": 0.90583,
+  "selection_metric": "val_macro_f1",
+  "best_selection": 0.90583,
+  "epochs_run": 66,
+  "sizes": {
+    "train": 10071,
+    "val": 1662,
+    "test": 4693
+  },
+  "device": "cuda"
+}

@@ -1,0 +1,53 @@
+labels_config: configs/astra_labels.yaml
+model:
+  family: crnn_bigru_verifier
+  features: logmel
+  n_mels: 40
+  conv_channels:
+  - 24
+  - 48
+  - 96
+  gru_hidden: 96
+  gru_layers: 2
+  dropout: 0.35
+data:
+  datasets:
+  - name: astra_hpo_syn80
+    path: /mnt/jfs_hpc/home/renz.joshua.labay/ME2-Voice-Control/data/hpo/astra_syn80
+  split:
+    method: official
+    seed: 20261016
+    feature_cache:
+      enabled: true
+      path: data/cache/astra_wake_v1_logmel
+training:
+  seed: 20261020
+  epochs: 80
+  batch_size: 64
+  learning_rate: 0.0005
+  optimizer: adam
+  weight_decay: 0.001
+  early_stopping_patience: 16
+  selection_metric: val_loss
+  lr_scheduler: cosine
+  class_weight:
+  - 1.0
+  - 1.8
+  focal_gamma: 1.5
+  sampling: balanced
+  gradient_clip_norm: 5.0
+  device: auto
+  num_workers: 4
+  augmentation:
+    enabled: false
+  feature_augmentation:
+    enabled: true
+    p: 0.45
+    time_masks: 2
+    time_mask_max_frames: 12
+    freq_masks: 1
+    freq_mask_max_bins: 4
+output:
+  checkpoint_dir: /mnt/jfs_hpc/home/renz.joshua.labay/ME2-Voice-Control/models/checkpoints
+  results_dir: /mnt/jfs_hpc/home/renz.joshua.labay/ME2-Voice-Control/results/astra_verifier
+  exp_id: ASTRA_CRNN_BIGRU_VERIFIER

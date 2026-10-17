@@ -1,0 +1,49 @@
+# Improved, still Raspberry-Pi-sized DS-CNN.  Base features remain cached;
+# SpecAugment-style masking regularises training without invalidating the cache.
+model:
+  family: dscnn
+  features: logmel
+  n_mels: 40
+  blocks:
+    - {ch: 48, k: 5, pool: 2}
+    - {ch: 96, k: 5, pool: 2}
+    - {ch: 160, k: 5, pool: 2}
+    - {ch: 160, k: 5, pool: 1}
+  dropout: 0.25
+data:
+  datasets:
+    - {name: mark_m, path: data/processed/mark_m}
+    - {name: ambient_silence, path: data/processed/ambient_noise}
+    - {name: fsc_supplement, path: data/processed/fsc}
+    - {name: speech_commands_supplement, path: data/processed/speech_commands}
+  split:
+    method: official
+    val_frac: 0.15
+    test_frac: 0.15
+    seed: 42
+    feature_cache: {enabled: true, path: data/cache/hpc_logmel}
+training:
+  seed: 321
+  epochs: 100
+  batch_size: 128
+  learning_rate: 0.0006
+  optimizer: adam
+  weight_decay: 0.0001
+  early_stopping_patience: 16
+  lr_scheduler: cosine
+  class_weight: balanced
+  gradient_clip_norm: 5.0
+  device: auto
+  num_workers: 8
+  augmentation: {enabled: false}
+  feature_augmentation:
+    enabled: true
+    p: 0.70
+    time_masks: 2
+    time_mask_max_frames: 24
+    freq_masks: 2
+    freq_mask_max_bins: 6
+output:
+  checkpoint_dir: models/checkpoints
+  results_dir: results/hpc
+  exp_id: EXP_DSCNN_HPC_V3

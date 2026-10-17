@@ -1,0 +1,506 @@
+{
+  "exp_id": "AI231_HPO_NOSAMPLER_20261016_210738",
+  "split": "test",
+  "num_samples": 4693,
+  "accuracy": 0.9016,
+  "macro_precision": 0.8987,
+  "macro_recall": 0.8883,
+  "macro_f1": 0.892,
+  "per_class": {
+    "PLAY_MUSIC__V1__NONE": {
+      "precision": 0.7308,
+      "recall": 0.8085,
+      "f1": 0.7677
+    },
+    "PLAY_MUSIC__V2__NONE": {
+      "precision": 0.913,
+      "recall": 0.8936,
+      "f1": 0.9032
+    },
+    "PLAY_MUSIC__V3__NONE": {
+      "precision": 0.875,
+      "recall": 0.8936,
+      "f1": 0.8842
+    },
+    "WEATHER__V1__NONE": {
+      "precision": 0.8182,
+      "recall": 0.766,
+      "f1": 0.7912
+    },
+    "WEATHER__V2__NONE": {
+      "precision": 0.9778,
+      "recall": 0.9362,
+      "f1": 0.9565
+    },
+    "WEATHER__V3__NONE": {
+      "precision": 0.9545,
+      "recall": 0.8936,
+      "f1": 0.9231
+    },
+    "TIME__V1__NONE": {
+      "precision": 0.8958,
+      "recall": 0.9149,
+      "f1": 0.9053
+    },
+    "TIME__V2__NONE": {
+      "precision": 0.8679,
+      "recall": 0.9787,
+      "f1": 0.92
+    },
+    "TIME__V3__NONE": {
+      "precision": 0.8333,
+      "recall": 0.7447,
+      "f1": 0.7865
+    },
+    "LIGHT_ON__V1__NONE": {
+      "precision": 0.8431,
+      "recall": 0.9149,
+      "f1": 0.8776
+    },
+    "LIGHT_ON__V2__NONE": {
+      "precision": 0.8431,
+      "recall": 0.9149,
+      "f1": 0.8776
+    },
+    "LIGHT_ON__V3__NONE": {
+      "precision": 0.907,
+      "recall": 0.8298,
+      "f1": 0.8667
+    },
+    "LIGHT_OFF__V1__NONE": {
+      "precision": 0.7857,
+      "recall": 0.9362,
+      "f1": 0.8544
+    },
+    "LIGHT_OFF__V2__NONE": {
+      "precision": 0.6964,
+      "recall": 0.8298,
+      "f1": 0.7573
+    },
+    "LIGHT_OFF__V3__NONE": {
+      "precision": 0.9091,
+      "recall": 0.8511,
+      "f1": 0.8791
+    },
+    "PAUSE__V1__NONE": {
+      "precision": 0.8627,
+      "recall": 0.9362,
+      "f1": 0.898
+    },
+    "PAUSE__V2__NONE": {
+      "precision": 0.902,
+      "recall": 0.9787,
+      "f1": 0.9388
+    },
+    "PAUSE__V3__NONE": {
+      "precision": 0.9362,
+      "recall": 0.9362,
+      "f1": 0.9362
+    },
+    "STOP__V1__NONE": {
+      "precision": 0.8372,
+      "recall": 0.766,
+      "f1": 0.8
+    },
+    "STOP__V2__NONE": {
+      "precision": 0.8431,
+      "recall": 0.9149,
+      "f1": 0.8776
+    },
+    "STOP__V3__NONE": {
+      "precision": 0.9778,
+      "recall": 0.9362,
+      "f1": 0.9565
+    },
+    "NEXT__V1__NONE": {
+      "precision": 0.7414,
+      "recall": 0.9149,
+      "f1": 0.819
+    },
+    "NEXT__V2__NONE": {
+      "precision": 0.92,
+      "recall": 0.9787,
+      "f1": 0.9485
+    },
+    "NEXT__V3__NONE": {
+      "precision": 0.9111,
+      "recall": 0.8723,
+      "f1": 0.8913
+    },
+    "VOLUME_UP__V1__NONE": {
+      "precision": 0.8537,
+      "recall": 0.7447,
+      "f1": 0.7955
+    },
+    "VOLUME_UP__V2__NONE": {
+      "precision": 0.78,
+      "recall": 0.8298,
+      "f1": 0.8041
+    },
+    "VOLUME_UP__V3__NONE": {
+      "precision": 0.8974,
+      "recall": 0.7447,
+      "f1": 0.814
+    },
+    "VOLUME_DOWN__V1__NONE": {
+      "precision": 0.8235,
+      "recall": 0.8936,
+      "f1": 0.8571
+    },
+    "VOLUME_DOWN__V2__NONE": {
+      "precision": 0.8,
+      "recall": 0.766,
+      "f1": 0.7826
+    },
+    "VOLUME_DOWN__V3__NONE": {
+      "precision": 0.8085,
+      "recall": 0.8085,
+      "f1": 0.8085
+    },
+    "CALL__V1__NONE": {
+      "precision": 1.0,
+      "recall": 0.8511,
+      "f1": 0.9195
+    },
+    "CALL__V2__NONE": {
+      "precision": 0.9574,
+      "recall": 0.9574,
+      "f1": 0.9574
+    },
+    "CALL__V3__NONE": {
+      "precision": 0.95,
+      "recall": 0.8085,
+      "f1": 0.8736
+    },
+    "MESSAGE__V1__NONE": {
+      "precision": 0.9773,
+      "recall": 1.0,
+      "f1": 0.9885
+    },
+    "MESSAGE__V2__NONE": {
+      "precision": 0.9512,
+      "recall": 0.8298,
+      "f1": 0.8864
+    },
+    "MESSAGE__V3__NONE": {
+      "precision": 1.0,
+      "recall": 0.9149,
+      "f1": 0.9556
+    },
+    "LIST_REMINDERS__V1__NONE": {
+      "precision": 0.9167,
+      "recall": 0.9362,
+      "f1": 0.9263
+    },
+    "LIST_REMINDERS__V2__NONE": {
+      "precision": 0.9512,
+      "recall": 0.8298,
+      "f1": 0.8864
+    },
+    "LIST_REMINDERS__V3__NONE": {
+      "precision": 0.913,
+      "recall": 0.8936,
+      "f1": 0.9032
+    },
+    "TIMER__V1__10_SECONDS": {
+      "precision": 1.0,
+      "recall": 0.9787,
+      "f1": 0.9892
+    },
+    "TIMER__V1__30_SECONDS": {
+      "precision": 0.9778,
+      "recall": 0.9362,
+      "f1": 0.9565
+    },
+    "TIMER__V1__1_MINUTE": {
+      "precision": 1.0,
+      "recall": 0.9362,
+      "f1": 0.967
+    },
+    "TIMER__V2__10_SECONDS": {
+      "precision": 0.9348,
+      "recall": 0.9149,
+      "f1": 0.9247
+    },
+    "TIMER__V2__30_SECONDS": {
+      "precision": 0.9778,
+      "recall": 0.9362,
+      "f1": 0.9565
+    },
+    "TIMER__V2__1_MINUTE": {
+      "precision": 1.0,
+      "recall": 0.9362,
+      "f1": 0.967
+    },
+    "TIMER__V3__10_SECONDS": {
+      "precision": 0.9787,
+      "recall": 0.9787,
+      "f1": 0.9787
+    },
+    "TIMER__V3__30_SECONDS": {
+      "precision": 1.0,
+      "recall": 0.9787,
+      "f1": 0.9892
+    },
+    "TIMER__V3__1_MINUTE": {
+      "precision": 1.0,
+      "recall": 0.9574,
+      "f1": 0.9783
+    },
+    "ALARM__V1__6_00_AM": {
+      "precision": 1.0,
+      "recall": 0.9787,
+      "f1": 0.9892
+    },
+    "ALARM__V1__8_00_AM": {
+      "precision": 0.9574,
+      "recall": 0.9574,
+      "f1": 0.9574
+    },
+    "ALARM__V1__9_00_PM": {
+      "precision": 1.0,
+      "recall": 0.9362,
+      "f1": 0.967
+    },
+    "ALARM__V2__6_00_AM": {
+      "precision": 0.9388,
+      "recall": 0.9787,
+      "f1": 0.9583
+    },
+    "ALARM__V2__8_00_AM": {
+      "precision": 1.0,
+      "recall": 0.9787,
+      "f1": 0.9892
+    },
+    "ALARM__V2__9_00_PM": {
+      "precision": 0.9773,
+      "recall": 0.9149,
+      "f1": 0.9451
+    },
+    "ALARM__V3__6_00_AM": {
+      "precision": 0.9762,
+      "recall": 0.8723,
+      "f1": 0.9213
+    },
+    "ALARM__V3__8_00_AM": {
+      "precision": 0.7636,
+      "recall": 0.8936,
+      "f1": 0.8235
+    },
+    "ALARM__V3__9_00_PM": {
+      "precision": 0.9535,
+      "recall": 0.8723,
+      "f1": 0.9111
+    },
+    "TEMPERATURE__V1__18_DEGREES": {
+      "precision": 0.9787,
+      "recall": 0.9787,
+      "f1": 0.9787
+    },
+    "TEMPERATURE__V1__22_DEGREES": {
+      "precision": 0.9778,
+      "recall": 0.9362,
+      "f1": 0.9565
+    },
+    "TEMPERATURE__V1__26_DEGREES": {
+      "precision": 0.9783,
+      "recall": 0.9574,
+      "f1": 0.9677
+    },
+    "TEMPERATURE__V2__18_DEGREES": {
+      "precision": 0.92,
+      "recall": 0.9787,
+      "f1": 0.9485
+    },
+    "TEMPERATURE__V2__22_DEGREES": {
+      "precision": 0.9556,
+      "recall": 0.9149,
+      "f1": 0.9348
+    },
+    "TEMPERATURE__V2__26_DEGREES": {
+      "precision": 0.9787,
+      "recall": 0.9787,
+      "f1": 0.9787
+    },
+    "TEMPERATURE__V3__18_DEGREES": {
+      "precision": 0.8824,
+      "recall": 0.9574,
+      "f1": 0.9184
+    },
+    "TEMPERATURE__V3__22_DEGREES": {
+      "precision": 1.0,
+      "recall": 0.8723,
+      "f1": 0.9318
+    },
+    "TEMPERATURE__V3__26_DEGREES": {
+      "precision": 1.0,
+      "recall": 0.9362,
+      "f1": 0.967
+    },
+    "BRIGHTNESS__V1__20_PERCENT": {
+      "precision": 0.9592,
+      "recall": 1.0,
+      "f1": 0.9792
+    },
+    "BRIGHTNESS__V1__60_PERCENT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "BRIGHTNESS__V1__100_PERCENT": {
+      "precision": 0.9773,
+      "recall": 0.9149,
+      "f1": 0.9451
+    },
+    "BRIGHTNESS__V2__20_PERCENT": {
+      "precision": 0.8235,
+      "recall": 0.8936,
+      "f1": 0.8571
+    },
+    "BRIGHTNESS__V2__60_PERCENT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "BRIGHTNESS__V2__100_PERCENT": {
+      "precision": 1.0,
+      "recall": 0.9149,
+      "f1": 0.9556
+    },
+    "BRIGHTNESS__V3__20_PERCENT": {
+      "precision": 0.9556,
+      "recall": 0.9149,
+      "f1": 0.9348
+    },
+    "BRIGHTNESS__V3__60_PERCENT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "BRIGHTNESS__V3__100_PERCENT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "COLOR__V1__RED": {
+      "precision": 0.7358,
+      "recall": 0.8298,
+      "f1": 0.78
+    },
+    "COLOR__V1__BLUE": {
+      "precision": 0.8163,
+      "recall": 0.8511,
+      "f1": 0.8333
+    },
+    "COLOR__V1__GREEN": {
+      "precision": 0.8684,
+      "recall": 0.7021,
+      "f1": 0.7765
+    },
+    "COLOR__V2__RED": {
+      "precision": 0.9592,
+      "recall": 1.0,
+      "f1": 0.9792
+    },
+    "COLOR__V2__BLUE": {
+      "precision": 0.9574,
+      "recall": 0.9574,
+      "f1": 0.9574
+    },
+    "COLOR__V2__GREEN": {
+      "precision": 0.8269,
+      "recall": 0.9149,
+      "f1": 0.8687
+    },
+    "COLOR__V3__RED": {
+      "precision": 0.7143,
+      "recall": 0.8511,
+      "f1": 0.7767
+    },
+    "COLOR__V3__BLUE": {
+      "precision": 0.8462,
+      "recall": 0.7021,
+      "f1": 0.7674
+    },
+    "COLOR__V3__GREEN": {
+      "precision": 0.8431,
+      "recall": 0.9149,
+      "f1": 0.8776
+    },
+    "CREATE_REMINDER__V1__DRINK_WATER": {
+      "precision": 0.9783,
+      "recall": 0.9574,
+      "f1": 0.9677
+    },
+    "CREATE_REMINDER__V1__STUDY": {
+      "precision": 1.0,
+      "recall": 0.9787,
+      "f1": 0.9892
+    },
+    "CREATE_REMINDER__V1__EXERCISE": {
+      "precision": 0.9535,
+      "recall": 0.8723,
+      "f1": 0.9111
+    },
+    "CREATE_REMINDER__V2__DRINK_WATER": {
+      "precision": 0.9792,
+      "recall": 1.0,
+      "f1": 0.9895
+    },
+    "CREATE_REMINDER__V2__STUDY": {
+      "precision": 0.9583,
+      "recall": 0.9787,
+      "f1": 0.9684
+    },
+    "CREATE_REMINDER__V2__EXERCISE": {
+      "precision": 0.9556,
+      "recall": 0.9149,
+      "f1": 0.9348
+    },
+    "CREATE_REMINDER__V3__DRINK_WATER": {
+      "precision": 0.9778,
+      "recall": 0.9362,
+      "f1": 0.9565
+    },
+    "CREATE_REMINDER__V3__STUDY": {
+      "precision": 1.0,
+      "recall": 0.9362,
+      "f1": 0.967
+    },
+    "CREATE_REMINDER__V3__EXERCISE": {
+      "precision": 0.9778,
+      "recall": 0.9362,
+      "f1": 0.9565
+    },
+    "ALARM__OTHER_SLOT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "BRIGHTNESS__OTHER_SLOT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "CREATE_REMINDER__OTHER_SLOT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "TEMPERATURE__OTHER_SLOT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "TIMER__OTHER_SLOT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "OUT_OF_SCOPE": {
+      "precision": 0.7402,
+      "recall": 0.8129,
+      "f1": 0.7749
+    }
+  }
+}

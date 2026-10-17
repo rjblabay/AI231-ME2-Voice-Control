@@ -1,0 +1,94 @@
+class,intent,variation,slot_value,phrase
+PLAY_MUSIC__V1__NONE,PLAY_MUSIC,1,,Play music
+PLAY_MUSIC__V2__NONE,PLAY_MUSIC,2,,Start music
+PLAY_MUSIC__V3__NONE,PLAY_MUSIC,3,,Play some music
+WEATHER__V1__NONE,WEATHER,1,,Weather
+WEATHER__V2__NONE,WEATHER,2,,What's the weather?
+WEATHER__V3__NONE,WEATHER,3,,Tell me the weather
+TIME__V1__NONE,TIME,1,,Time
+TIME__V2__NONE,TIME,2,,What time is it?
+TIME__V3__NONE,TIME,3,,Tell me the time
+LIGHT_ON__V1__NONE,LIGHT_ON,1,,Lights on
+LIGHT_ON__V2__NONE,LIGHT_ON,2,,Power on the lights
+LIGHT_ON__V3__NONE,LIGHT_ON,3,,Turn on the lights
+LIGHT_OFF__V1__NONE,LIGHT_OFF,1,,Lights out
+LIGHT_OFF__V2__NONE,LIGHT_OFF,2,,Kill the lights
+LIGHT_OFF__V3__NONE,LIGHT_OFF,3,,Shut off the lights
+PAUSE__V1__NONE,PAUSE,1,,Pause
+PAUSE__V2__NONE,PAUSE,2,,Pause audio
+PAUSE__V3__NONE,PAUSE,3,,Pause song
+STOP__V1__NONE,STOP,1,,Stop
+STOP__V2__NONE,STOP,2,,Stop playing
+STOP__V3__NONE,STOP,3,,End playback
+NEXT__V1__NONE,NEXT,1,,Next song
+NEXT__V2__NONE,NEXT,2,,Skip song
+NEXT__V3__NONE,NEXT,3,,Play next song
+VOLUME_UP__V1__NONE,VOLUME_UP,1,,Volume up
+VOLUME_UP__V2__NONE,VOLUME_UP,2,,Increase the volume
+VOLUME_UP__V3__NONE,VOLUME_UP,3,,Turn the volume up
+VOLUME_DOWN__V1__NONE,VOLUME_DOWN,1,,Volume down
+VOLUME_DOWN__V2__NONE,VOLUME_DOWN,2,,Lower the volume
+VOLUME_DOWN__V3__NONE,VOLUME_DOWN,3,,Turn the volume down
+CALL__V1__NONE,CALL,1,,Call
+CALL__V2__NONE,CALL,2,,Make a call
+CALL__V3__NONE,CALL,3,,Make a phone call
+MESSAGE__V1__NONE,MESSAGE,1,,Message
+MESSAGE__V2__NONE,MESSAGE,2,,Send a message
+MESSAGE__V3__NONE,MESSAGE,3,,Send my message
+LIST_REMINDERS__V1__NONE,LIST_REMINDERS,1,,Reminders
+LIST_REMINDERS__V2__NONE,LIST_REMINDERS,2,,Show my reminders
+LIST_REMINDERS__V3__NONE,LIST_REMINDERS,3,,List my reminders
+TIMER__V1__10_SECONDS,TIMER,1,10 seconds,Timer 10 seconds
+TIMER__V1__30_SECONDS,TIMER,1,30 seconds,Timer 30 seconds
+TIMER__V1__1_MINUTE,TIMER,1,1 minute,Timer 1 minute
+TIMER__V2__10_SECONDS,TIMER,2,10 seconds,Countdown for 10 seconds
+TIMER__V2__30_SECONDS,TIMER,2,30 seconds,Countdown for 30 seconds
+TIMER__V2__1_MINUTE,TIMER,2,1 minute,Countdown for 1 minute
+TIMER__V3__10_SECONDS,TIMER,3,10 seconds,Start a timer for 10 seconds
+TIMER__V3__30_SECONDS,TIMER,3,30 seconds,Start a timer for 30 seconds
+TIMER__V3__1_MINUTE,TIMER,3,1 minute,Start a timer for 1 minute
+ALARM__V1__6_00_AM,ALARM,1,6:00 AM,Alarm 6:00 AM
+ALARM__V1__8_00_AM,ALARM,1,8:00 AM,Alarm 8:00 AM
+ALARM__V1__9_00_PM,ALARM,1,9:00 PM,Alarm 9:00 PM
+ALARM__V2__6_00_AM,ALARM,2,6:00 AM,Wake me up at 6:00 AM
+ALARM__V2__8_00_AM,ALARM,2,8:00 AM,Wake me up at 8:00 AM
+ALARM__V2__9_00_PM,ALARM,2,9:00 PM,Wake me up at 9:00 PM
+ALARM__V3__6_00_AM,ALARM,3,6:00 AM,Set an alarm for 6:00 AM
+ALARM__V3__8_00_AM,ALARM,3,8:00 AM,Set an alarm for 8:00 AM
+ALARM__V3__9_00_PM,ALARM,3,9:00 PM,Set an alarm for 9:00 PM
+TEMPERATURE__V1__18_DEGREES,TEMPERATURE,1,18 degrees,Temperature 18 degrees
+TEMPERATURE__V1__22_DEGREES,TEMPERATURE,1,22 degrees,Temperature 22 degrees
+TEMPERATURE__V1__26_DEGREES,TEMPERATURE,1,26 degrees,Temperature 26 degrees
+TEMPERATURE__V2__18_DEGREES,TEMPERATURE,2,18 degrees,Change the temperature to 18 degrees
+TEMPERATURE__V2__22_DEGREES,TEMPERATURE,2,22 degrees,Change the temperature to 22 degrees
+TEMPERATURE__V2__26_DEGREES,TEMPERATURE,2,26 degrees,Change the temperature to 26 degrees
+TEMPERATURE__V3__18_DEGREES,TEMPERATURE,3,18 degrees,Set the temperature to 18 degrees
+TEMPERATURE__V3__22_DEGREES,TEMPERATURE,3,22 degrees,Set the temperature to 22 degrees
+TEMPERATURE__V3__26_DEGREES,TEMPERATURE,3,26 degrees,Set the temperature to 26 degrees
+BRIGHTNESS__V1__20_PERCENT,BRIGHTNESS,1,20 percent,Brightness 20 percent
+BRIGHTNESS__V1__60_PERCENT,BRIGHTNESS,1,60 percent,Brightness 60 percent
+BRIGHTNESS__V1__100_PERCENT,BRIGHTNESS,1,100 percent,Brightness 100 percent
+BRIGHTNESS__V2__20_PERCENT,BRIGHTNESS,2,20 percent,Adjust brightness to 20 percent
+BRIGHTNESS__V2__60_PERCENT,BRIGHTNESS,2,60 percent,Adjust brightness to 60 percent
+BRIGHTNESS__V2__100_PERCENT,BRIGHTNESS,2,100 percent,Adjust brightness to 100 percent
+BRIGHTNESS__V3__20_PERCENT,BRIGHTNESS,3,20 percent,Brightness level 20 percent
+BRIGHTNESS__V3__60_PERCENT,BRIGHTNESS,3,60 percent,Brightness level 60 percent
+BRIGHTNESS__V3__100_PERCENT,BRIGHTNESS,3,100 percent,Brightness level 100 percent
+COLOR__V1__RED,COLOR,1,Red,Change color to Red
+COLOR__V1__BLUE,COLOR,1,Blue,Change color to Blue
+COLOR__V1__GREEN,COLOR,1,Green,Change color to Green
+COLOR__V2__RED,COLOR,2,Red,Switch color to Red
+COLOR__V2__BLUE,COLOR,2,Blue,Switch color to Blue
+COLOR__V2__GREEN,COLOR,2,Green,Switch color to Green
+COLOR__V3__RED,COLOR,3,Red,Set color to Red
+COLOR__V3__BLUE,COLOR,3,Blue,Set color to Blue
+COLOR__V3__GREEN,COLOR,3,Green,Set color to Green
+CREATE_REMINDER__V1__DRINK_WATER,CREATE_REMINDER,1,Drink water,Reminder Drink water
+CREATE_REMINDER__V1__STUDY,CREATE_REMINDER,1,Study,Reminder Study
+CREATE_REMINDER__V1__EXERCISE,CREATE_REMINDER,1,Exercise,Reminder Exercise
+CREATE_REMINDER__V2__DRINK_WATER,CREATE_REMINDER,2,Drink water,Remind me to Drink water
+CREATE_REMINDER__V2__STUDY,CREATE_REMINDER,2,Study,Remind me to Study
+CREATE_REMINDER__V2__EXERCISE,CREATE_REMINDER,2,Exercise,Remind me to Exercise
+CREATE_REMINDER__V3__DRINK_WATER,CREATE_REMINDER,3,Drink water,Create a reminder to Drink water
+CREATE_REMINDER__V3__STUDY,CREATE_REMINDER,3,Study,Create a reminder to Study
+CREATE_REMINDER__V3__EXERCISE,CREATE_REMINDER,3,Exercise,Create a reminder to Exercise

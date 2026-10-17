@@ -1,0 +1,39 @@
+# Baseline 2: Log-Mel -> small conventional CNN
+# Utterance-level command classifier. Reference CNN before the DS-CNN.
+
+model:
+  family: cnn
+  features: logmel
+  n_mels: 40
+  conv_channels: [32, 64]     # channels per conv block
+  kernel_size: 5
+  pool_size: 2
+  dropout: 0.3
+
+data:
+  datasets:
+    - name: fsc
+      path: data/processed/fsc
+  split:
+    method: speaker_disjoint
+    val_frac: 0.15
+    test_frac: 0.20
+    seed: 42
+
+training:
+  seed: 42
+  epochs: 40
+  batch_size: 64
+  learning_rate: 0.001
+  optimizer: adam
+  weight_decay: 0.0001
+  early_stopping_patience: 6
+  lr_scheduler: cosine
+  class_weight: balanced
+  device: auto
+  num_workers: 0
+
+output:
+  checkpoint_dir: models/checkpoints
+  results_dir: results
+  exp_id: EXP_CNN

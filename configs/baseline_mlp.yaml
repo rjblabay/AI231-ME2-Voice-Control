@@ -1,0 +1,43 @@
+# Baseline 1: MFCC -> small MLP
+# Utterance-level command classifier. Intentionally simple reference model.
+
+model:
+  family: mlp
+  features: mfcc              # use MFCC features for this baseline
+  n_features: 40              # number of MFCC coefficients
+  hidden_layers: [256, 128]
+  dropout: 0.3
+
+data:
+  # Which prepared dataset(s) to load. Paths are relative to repo root.
+  # Enable only datasets that actually exist on disk.
+  datasets:
+    - name: fsc
+      path: data/processed/fsc
+    # - name: speech_commands
+    #   path: data/processed/speech_commands
+    # - name: custom
+    #   path: data/processed/custom
+  split:
+    method: speaker_disjoint  # speaker_disjoint | stratified | official
+    val_frac: 0.15
+    test_frac: 0.20
+    seed: 42
+
+training:
+  seed: 42
+  epochs: 30
+  batch_size: 64
+  learning_rate: 0.001
+  optimizer: adam
+  weight_decay: 0.0001
+  early_stopping_patience: 6
+  lr_scheduler: cosine        # cosine | step | none
+  class_weight: balanced      # balanced | none
+  device: auto                # auto -> MPS if available else CPU
+  num_workers: 0
+
+output:
+  checkpoint_dir: models/checkpoints
+  results_dir: results
+  exp_id: EXP_MLP

@@ -1,0 +1,21 @@
+{
+  "exp_id": "ASTRA_CRNN_BIGRU_VERIFIER_20261016_184000",
+  "split": "test",
+  "num_samples": 64,
+  "accuracy": 0.9844,
+  "macro_precision": 0.75,
+  "macro_recall": 0.9921,
+  "macro_f1": 0.8293,
+  "per_class": {
+    "ASTRA": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6667
+    },
+    "NOT_WAKE": {
+      "precision": 1.0,
+      "recall": 0.9841,
+      "f1": 0.992
+    }
+  }
+}

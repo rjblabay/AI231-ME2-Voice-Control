@@ -1,0 +1,39 @@
+# V2 keeps all lexical confusers but avoids overwhelming 60 real positives
+# with generic negatives. It is still clip-disjoint, not speaker-disjoint.
+labels_config: configs/astra_nova_labels.yaml
+model:
+  family: dscnn
+  features: logmel
+  n_mels: 40
+  blocks:
+    - {ch: 24, k: 5, pool: 2}
+    - {ch: 48, k: 5, pool: 2}
+    - {ch: 96, k: 5, pool: 2}
+  dropout: 0.10
+data:
+  datasets:
+    - {name: astra_nova, path: data/processed/astra_nova_v2}
+  split:
+    method: official
+    seed: 20261002
+    feature_cache: {enabled: true, path: data/cache/astra_nova_v2_logmel}
+training:
+  seed: 20261002
+  epochs: 80
+  batch_size: 32
+  learning_rate: 0.001
+  optimizer: adam
+  weight_decay: 0.0001
+  early_stopping_patience: 18
+  lr_scheduler: cosine
+  class_weight: none
+  sampling: balanced
+  gradient_clip_norm: 5.0
+  device: auto
+  num_workers: 0
+  augmentation: {enabled: false}
+  feature_augmentation: {enabled: false}
+output:
+  checkpoint_dir: models/checkpoints
+  results_dir: results/astra_nova
+  exp_id: ASTRA_NOVA_V2_LOCAL

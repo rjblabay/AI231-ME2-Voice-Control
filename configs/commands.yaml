@@ -1,0 +1,58 @@
+# ME2 Voice Command Model - Command taxonomy
+#
+# This is the single source of truth for the closed vocabulary of spoken
+# commands the model can recognize. Add or remove entries here and the rest
+# of the pipeline (datasets, model output head, evaluation, demo) follows
+# automatically - nothing else needs to change.
+#
+# Two special classes are reserved:
+#   UNKNOWN  - unrelated speech that is NOT one of the commands above
+#   SILENCE  - silence / background noise (should never trigger a command)
+#
+# Each class maps to an integer id assigned in the order listed below.
+# Reordering existing classes changes the mapping, so only append new
+# classes or edit carefully.
+
+# Confidence rejection: predictions with softmax confidence below this
+# threshold are forced to UNKNOWN. Tune with scripts/study_threshold.py.
+#
+# NOTE: 0.5 is too permissive - it lets out-of-distribution input (e.g. real
+# speech played against a model that was only trained on synthetic tones)
+# through as a false command at ~50% confidence. 0.75 rejects those while
+# still accepting genuinely confident predictions. Re-tune on your real
+# dataset with scripts/study_threshold.py before locking it in.
+rejection:
+  threshold: 0.75
+
+# Silence gate: clips with RMS energy below this are forced to SILENCE and
+# never treated as a command. Real speech sits around RMS ~0.03+, while
+# typical room ambience (fan, HVAC, keyboard) is ~0.005-0.01. 0.005 was too
+# low and let ambient noise through as a false command; 0.01 catches that
+# range while still passing genuine commands. Tune with scripts/study_gate.py.
+silence_gate:
+  rms: 0.01
+
+classes:
+  - PLAY_MUSIC
+  - QUESTION_WEATHER
+  - QUESTION_TIME
+  - LIGHT_ON
+  - LIGHT_OFF
+  - LIGHT_DIM
+  - LIGHT_BRIGHTEN
+  - SET_TIMER
+  - SET_ALARM
+  - TEMP_UP
+  - TEMP_DOWN
+  - MEDIA_PAUSE
+  - MEDIA_STOP
+  - MEDIA_NEXT
+  - VOLUME_UP
+  - VOLUME_DOWN
+  - REMINDER
+  - CALL
+  - UNKNOWN
+  - SILENCE
+  # Appended to preserve the id mapping of the established 20-class baseline.
+  - TEMP_SET
+  - MESSAGE

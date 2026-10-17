@@ -1,0 +1,48 @@
+# Main model: Log-Mel -> DS-CNN (depthwise-separable convolutions)
+# The primary Voice Command Model. Kept deliberately small (< ~1M params)
+# for real-time inference on a Raspberry Pi 4/5.
+
+model:
+  family: dscnn
+  features: logmel
+  n_mels: 40
+  # Depthwise-separable conv stack. Each block:
+  #   Conv2d(depthwise, groups=C_in) -> BN -> ReLU
+  #   Conv2d(1x1 pointwise, C_in->C_out) -> BN -> ReLU
+  #   (optional) AvgPool2d
+  blocks:
+    - {ch: 32,  k: 5, pool: 2}
+    - {ch: 64,  k: 5, pool: 2}
+    - {ch: 128, k: 5, pool: 2}
+    - {ch: 128, k: 5, pool: 1}
+  dropout: 0.3
+
+data:
+  datasets:
+    - name: fsc
+      path: data/processed/fsc
+  split:
+    # FSC ships official speaker-disjoint train/valid/test splits. Preserve them.
+    # Falls back to speaker_disjoint automatically if no 'split' column exists.
+    method: official
+    val_frac: 0.15
+    test_frac: 0.20
+    seed: 42
+
+training:
+  seed: 42
+  epochs: 50
+  batch_size: 64
+  learning_rate: 0.001
+  optimizer: adam
+  weight_decay: 0.0001
+  early_stopping_patience: 8
+  lr_scheduler: cosine
+  class_weight: balanced
+  device: auto
+  num_workers: 0
+
+output:
+  checkpoint_dir: models/checkpoints
+  results_dir: results
+  exp_id: EXP_DSCNN

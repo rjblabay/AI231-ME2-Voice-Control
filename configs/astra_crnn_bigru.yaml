@@ -1,0 +1,45 @@
+# Binary Astra wake-word detector. All clips are standardized to 16 kHz mono
+# and 3 seconds; 48 kHz Raspberry Pi capture is resampled before inference.
+labels_config: configs/astra_labels.yaml
+model:
+  family: crnn_bigru
+  features: logmel
+  n_mels: 40
+  conv_channels: [24, 48, 96]
+  gru_hidden: 96
+  gru_layers: 2
+  dropout: 0.25
+data:
+  datasets:
+    - {name: astra_wake_v1, path: data/processed/astra_wake_v1}
+  split:
+    method: official
+    seed: 20261016
+    feature_cache: {enabled: true, path: data/cache/astra_wake_v1_logmel}
+training:
+  seed: 20261016
+  epochs: 80
+  batch_size: 64
+  learning_rate: 0.001
+  optimizer: adam
+  weight_decay: 0.0001
+  early_stopping_patience: 16
+  selection_metric: val_macro_f1
+  lr_scheduler: cosine
+  class_weight: balanced
+  sampling: balanced
+  gradient_clip_norm: 5.0
+  device: auto
+  num_workers: 4
+  augmentation: {enabled: false}
+  feature_augmentation:
+    enabled: true
+    p: 0.60
+    time_masks: 2
+    time_mask_max_frames: 18
+    freq_masks: 2
+    freq_mask_max_bins: 5
+output:
+  checkpoint_dir: models/checkpoints
+  results_dir: results/astra_wake
+  exp_id: ASTRA_CRNN_BIGRU

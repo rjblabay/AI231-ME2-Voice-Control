@@ -1,0 +1,57 @@
+# Combined model: Log-Mel -> DS-CNN trained on BOTH Fluent Speech Commands
+# (primary, fluent phrasings) and Google Speech Commands V2 (secondary, short
+# words + clean out-of-vocabulary speech for the UNKNOWN path).
+#
+# Prereq: run BOTH prep scripts first so both processed dirs exist:
+#   python scripts/prepare_fsc.py --raw <fsc-root>
+#   python scripts/prepare_speech_commands.py --raw <scv2-root>
+#
+# Splitting: FSC carries its official speaker-disjoint splits (a 'split'
+# column). SCV2 has no official split file, so its prep script assigns
+# speaker-disjoint splits itself. The loader MERGES the two and verifies the
+# union is globally speaker-disjoint (no speaker in two splits). Because the
+# two corpora use disjoint speaker pools, this is safe.
+#
+# Use configs/dscnn.yaml (FSC only) if you do not have SCV2 available.
+
+model:
+  family: dscnn
+  features: logmel
+  n_mels: 40
+  blocks:
+    - {ch: 32,  k: 5, pool: 2}
+    - {ch: 64,  k: 5, pool: 2}
+    - {ch: 128, k: 5, pool: 2}
+    - {ch: 128, k: 5, pool: 1}
+  dropout: 0.3
+
+data:
+  datasets:
+    - name: fsc
+      path: data/processed/fsc
+    - name: speech_commands
+      path: data/processed/speech_commands
+  split:
+    # 'official' preserves FSC's splits and merges in SCV2's computed splits.
+    method: official
+    val_frac: 0.15
+    test_frac: 0.20
+    seed: 42
+
+training:
+  seed: 42
+  epochs: 50
+  batch_size: 64
+  learning_rate: 0.001
+  optimizer: adam
+  weight_decay: 0.0001
+  early_stopping_patience: 8
+  lr_scheduler: cosine
+  class_weight: balanced
+  device: auto
+  num_workers: 0
+
+output:
+  checkpoint_dir: models/checkpoints
+  results_dir: results
+  exp_id: EXP_DSCNN_COMBINED

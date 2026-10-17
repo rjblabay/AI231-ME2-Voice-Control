@@ -1,0 +1,32 @@
+# Trial B: capacity plus focal loss for difficult, confusable command variants.
+labels_config: configs/ai231_command_variations.yaml
+model:
+  family: crnn_bigru
+  features: logmel
+  n_mels: 40
+  conv_channels: [40, 80, 128]
+  gru_hidden: 160
+  gru_layers: 2
+  dropout: 0.25
+data:
+  datasets: [{name: ai231_commands_v1, path: data/processed/ai231_commands_v1}]
+  split: {method: official, seed: 20261016, feature_cache: {enabled: true, path: data/cache/ai231_commands_v1_logmel}}
+training:
+  seed: 20261018
+  epochs: 80
+  batch_size: 96
+  learning_rate: 0.0006
+  optimizer: adam
+  weight_decay: 0.0003
+  early_stopping_patience: 14
+  selection_metric: val_macro_f1
+  lr_scheduler: cosine
+  class_weight: balanced
+  focal_gamma: 1.0
+  sampling: balanced
+  gradient_clip_norm: 5.0
+  device: cuda
+  num_workers: 6
+  augmentation: {enabled: false}
+  feature_augmentation: {enabled: true, p: 0.35, time_masks: 2, time_mask_max_frames: 12, freq_masks: 2, freq_mask_max_bins: 4}
+output: {checkpoint_dir: models/checkpoints, results_dir: results/commands, exp_id: AI231_HPO_FOCAL}

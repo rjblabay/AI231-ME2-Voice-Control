@@ -1,0 +1,147 @@
+[run] experiment=AI231_CRNN_BIGRU_20261016_200000 host=ai-n002.hpc.coe.upd.edu.ph started=2026-10-16T20:08:50+08:00
+Fri Oct 16 20:08:50 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.159.03             Driver Version: 580.159.03     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:07:00.0 Off |                    0 |
+| N/A   48C    P0            264W /  400W |   15365MiB /  40960MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          On  |   00000000:0F:00.0 Off |                    0 |
+| N/A   44C    P0            327W /  400W |   11420MiB /  40960MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A100-SXM4-40GB          On  |   00000000:47:00.0 Off |                    0 |
+| N/A   44C    P0            307W /  400W |   11420MiB /  40960MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A100-SXM4-40GB          On  |   00000000:4E:00.0 Off |                    0 |
+| N/A   37C    P0            129W /  400W |   16826MiB /  40960MiB |     68%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   4  NVIDIA A100-SXM4-40GB          On  |   00000000:87:00.0 Off |                    0 |
+| N/A   57C    P0            101W /  400W |   16824MiB /  40960MiB |     46%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   5  NVIDIA A100-SXM4-40GB          On  |   00000000:90:00.0 Off |                    0 |
+| N/A   55C    P0            311W /  400W |   13491MiB /  40960MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   6  NVIDIA A100-SXM4-40GB          On  |   00000000:B7:00.0 Off |                    0 |
+| N/A   62C    P0            385W /  400W |   20245MiB /  40960MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   7  NVIDIA A100-SXM4-40GB          On  |   00000000:BD:00.0 Off |                    0 |
+| N/A   53C    P0            300W /  400W |   13491MiB /  40960MiB |    100%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A         1981426      C   python                                 1628MiB |
+|    0   N/A  N/A         2705642      C   python                                12498MiB |
+|    0   N/A  N/A         3083559      C   .venv/bin/python                       1202MiB |
+|    1   N/A  N/A          654102      C   .../nlq/ext/.venv-enc/bin/python      11406MiB |
+|    2   N/A  N/A          654103      C   .../nlq/ext/.venv-enc/bin/python      11406MiB |
+|    3   N/A  N/A          753587      C   .../nlq/ext/.venv-enc/bin/python      16814MiB |
+|    4   N/A  N/A          753588      C   .../nlq/ext/.venv-enc/bin/python      16812MiB |
+|    5   N/A  N/A          624848      C   python                                 4594MiB |
+|    5   N/A  N/A          753577      C   .../nlq/ext/.venv-enc/bin/python       8866MiB |
+|    6   N/A  N/A         2566820      C   .../nlq/ext/.venv-enc/bin/python       7718MiB |
+|    6   N/A  N/A         2707600      C   python                                12498MiB |
+|    7   N/A  N/A          628294      C   python                                 4594MiB |
+|    7   N/A  N/A          753578      C   .../nlq/ext/.venv-enc/bin/python       8866MiB |
++-----------------------------------------------------------------------------------------+
+[train] device = cuda
+[data] ai231_commands_v1: 16426 usable clips
+[data] split: train=10071 val=1662 test=4693 | speakers train/val/test = 558/99/214
+[train] model = crnn_bigru  params = 897,796
+[train] balanced sampling enabled
+Epoch 1/70  Train Loss: 4.1915  Val Loss: 4.3637  Val Acc: 0.0181  Val MacroF1: 0.0050
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 2/70  Train Loss: 3.6648  Val Loss: 3.6977  Val Acc: 0.0842  Val MacroF1: 0.0453
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 3/70  Train Loss: 2.9854  Val Loss: 2.8818  Val Acc: 0.2918  Val MacroF1: 0.2219
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 4/70  Train Loss: 2.2152  Val Loss: 2.1888  Val Acc: 0.4862  Val MacroF1: 0.4387
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 5/70  Train Loss: 1.5846  Val Loss: 1.7453  Val Acc: 0.5884  Val MacroF1: 0.5628
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 6/70  Train Loss: 1.1969  Val Loss: 1.4886  Val Acc: 0.6643  Val MacroF1: 0.6599
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 7/70  Train Loss: 0.9260  Val Loss: 1.2822  Val Acc: 0.7262  Val MacroF1: 0.7281
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 8/70  Train Loss: 0.7701  Val Loss: 1.1558  Val Acc: 0.7467  Val MacroF1: 0.7609
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 9/70  Train Loss: 0.6767  Val Loss: 1.1098  Val Acc: 0.7569  Val MacroF1: 0.7635
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 10/70  Train Loss: 0.5795  Val Loss: 1.0609  Val Acc: 0.7726  Val MacroF1: 0.7810
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 11/70  Train Loss: 0.4823  Val Loss: 1.0281  Val Acc: 0.7840  Val MacroF1: 0.7996
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 12/70  Train Loss: 0.4881  Val Loss: 0.9483  Val Acc: 0.7894  Val MacroF1: 0.8058
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 13/70  Train Loss: 0.4260  Val Loss: 0.9711  Val Acc: 0.7852  Val MacroF1: 0.7993
+Epoch 14/70  Train Loss: 0.3927  Val Loss: 0.9495  Val Acc: 0.7936  Val MacroF1: 0.8009
+Epoch 15/70  Train Loss: 0.3351  Val Loss: 0.9733  Val Acc: 0.7852  Val MacroF1: 0.7926
+Epoch 16/70  Train Loss: 0.3306  Val Loss: 0.9181  Val Acc: 0.7966  Val MacroF1: 0.8129
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 17/70  Train Loss: 0.2990  Val Loss: 0.9346  Val Acc: 0.8008  Val MacroF1: 0.8196
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 18/70  Train Loss: 0.2947  Val Loss: 0.8901  Val Acc: 0.7984  Val MacroF1: 0.8054
+Epoch 19/70  Train Loss: 0.2896  Val Loss: 0.9310  Val Acc: 0.7942  Val MacroF1: 0.8116
+Epoch 20/70  Train Loss: 0.2572  Val Loss: 0.8610  Val Acc: 0.7990  Val MacroF1: 0.8205
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 21/70  Train Loss: 0.2610  Val Loss: 0.8233  Val Acc: 0.8141  Val MacroF1: 0.8395
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 22/70  Train Loss: 0.2339  Val Loss: 0.8828  Val Acc: 0.7954  Val MacroF1: 0.8074
+Epoch 23/70  Train Loss: 0.2313  Val Loss: 0.8589  Val Acc: 0.8051  Val MacroF1: 0.8149
+Epoch 24/70  Train Loss: 0.2105  Val Loss: 0.8354  Val Acc: 0.8177  Val MacroF1: 0.8410
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 25/70  Train Loss: 0.2044  Val Loss: 0.8062  Val Acc: 0.8014  Val MacroF1: 0.8298
+Epoch 26/70  Train Loss: 0.1946  Val Loss: 0.8636  Val Acc: 0.7930  Val MacroF1: 0.8153
+Epoch 27/70  Train Loss: 0.1700  Val Loss: 0.8456  Val Acc: 0.8117  Val MacroF1: 0.8343
+Epoch 28/70  Train Loss: 0.1738  Val Loss: 0.8615  Val Acc: 0.8117  Val MacroF1: 0.8337
+Epoch 29/70  Train Loss: 0.1577  Val Loss: 0.8049  Val Acc: 0.8189  Val MacroF1: 0.8438
+  Best model saved -> models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+Epoch 30/70  Train Loss: 0.1465  Val Loss: 0.8297  Val Acc: 0.8045  Val MacroF1: 0.8229
+Epoch 31/70  Train Loss: 0.1548  Val Loss: 0.8430  Val Acc: 0.8069  Val MacroF1: 0.8219
+Epoch 32/70  Train Loss: 0.1439  Val Loss: 0.7935  Val Acc: 0.8171  Val MacroF1: 0.8320
+Epoch 33/70  Train Loss: 0.1435  Val Loss: 0.7771  Val Acc: 0.8159  Val MacroF1: 0.8306
+Epoch 34/70  Train Loss: 0.1329  Val Loss: 0.7891  Val Acc: 0.8123  Val MacroF1: 0.8279
+Epoch 35/70  Train Loss: 0.1278  Val Loss: 0.8406  Val Acc: 0.8129  Val MacroF1: 0.8267
+Epoch 36/70  Train Loss: 0.1298  Val Loss: 0.8188  Val Acc: 0.8117  Val MacroF1: 0.8336
+Epoch 37/70  Train Loss: 0.1232  Val Loss: 0.7971  Val Acc: 0.8177  Val MacroF1: 0.8395
+Epoch 38/70  Train Loss: 0.1326  Val Loss: 0.7736  Val Acc: 0.8201  Val MacroF1: 0.8261
+Epoch 39/70  Train Loss: 0.1120  Val Loss: 0.8175  Val Acc: 0.8195  Val MacroF1: 0.8391
+Epoch 40/70  Train Loss: 0.1000  Val Loss: 0.7815  Val Acc: 0.8255  Val MacroF1: 0.8297
+Epoch 41/70  Train Loss: 0.0966  Val Loss: 0.7912  Val Acc: 0.8237  Val MacroF1: 0.8373
+Epoch 42/70  Train Loss: 0.1023  Val Loss: 0.8070  Val Acc: 0.8189  Val MacroF1: 0.8323
+Epoch 43/70  Train Loss: 0.1053  Val Loss: 0.7653  Val Acc: 0.8207  Val MacroF1: 0.8351
+  Early stopping at epoch 43 (no improvement for 14).
+
+[train] Done. Best val macro-F1 = 0.8438
+[train] Checkpoint: /mnt/jfs_hpc/home/renz.joshua.labay/ME2-Voice-Control/models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt
+[train] Results:    /mnt/jfs_hpc/home/renz.joshua.labay/ME2-Voice-Control/results/commands/AI231_CRNN_BIGRU_20261016_200000
+[eval] loaded models/checkpoints/AI231_CRNN_BIGRU_20261016_200000/best.pt (family=crnn_bigru, params=897,796)
+[data] ai231_commands_v1: 16426 usable clips
+[data] split: train=10071 val=1662 test=4693 | speakers train/val/test = 558/99/214
+
+[eval] test set: n=4693
+[eval] Accuracy=0.8470  MacroP=0.8263  MacroR=0.8551  MacroF1=0.8341
+[eval] Outputs -> /mnt/jfs_hpc/home/renz.joshua.labay/ME2-Voice-Control/results/commands/AI231_CRNN_BIGRU_20261016_200000
+/mnt/jfs_hpc/home/renz.joshua.labay/ME2-Voice-Control/src/export_onnx.py:58: DeprecationWarning: You are using the legacy TorchScript-based ONNX export. Starting in PyTorch 2.9, the new torch.export-based ONNX exporter has become the default. Learn more about the new export logic: https://docs.pytorch.org/docs/stable/onnx_export.html. For exporting control flow: https://pytorch.org/tutorials/beginner/onnx/export_control_flow_model_to_onnx_tutorial.html
+  torch.onnx.export(
+/home/renz.joshua.labay/ME2-Voice-Control-Old/.hpc-venv/lib/python3.13/site-packages/torch/onnx/_internal/torchscript_exporter/symbolic_opset9.py:4604: UserWarning: Exporting a model to ONNX with a batch_size other than 1, with a variable length with GRU can cause an error when running the ONNX model with a different batch size. Make sure to save the model with a batch size of 1, or define the initial states (h0/c0) as inputs of the model. 
+  return _generic_rnn(
+[export] wrote ONNX -> models/onnx/AI231_CRNN_BIGRU_20261016_200000.onnx
+[export] PyTorch vs ONNX max abs diff = 1.55e-05 (OK, tol 1.0e-03)
+[export] Done. Model at: models/onnx/AI231_CRNN_BIGRU_20261016_200000.onnx
+[run] completed=2026-10-16T20:23:50+08:00

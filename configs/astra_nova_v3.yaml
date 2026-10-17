@@ -1,0 +1,37 @@
+# Compact conventional CNN: still appropriate for Pi export, but less
+# constrained than a DS-CNN while validating this small personal data set.
+labels_config: configs/astra_nova_labels.yaml
+model:
+  family: cnn
+  features: logmel
+  n_mels: 40
+  channels: [16, 32, 64]
+  dropout: 0.15
+data:
+  datasets:
+    - {name: astra_nova, path: data/processed/astra_nova_v2}
+  split:
+    method: official
+    seed: 20261002
+    feature_cache: {enabled: true, path: data/cache/astra_nova_v2_logmel}
+training:
+  seed: 20261002
+  epochs: 80
+  batch_size: 32
+  learning_rate: 0.001
+  optimizer: adam
+  weight_decay: 0.0001
+  early_stopping_patience: 20
+  selection_metric: val_loss
+  lr_scheduler: cosine
+  class_weight: none
+  sampling: balanced
+  gradient_clip_norm: 5.0
+  device: auto
+  num_workers: 0
+  augmentation: {enabled: false}
+  feature_augmentation: {enabled: false}
+output:
+  checkpoint_dir: models/checkpoints
+  results_dir: results/astra_nova
+  exp_id: ASTRA_NOVA_V3_LOCAL

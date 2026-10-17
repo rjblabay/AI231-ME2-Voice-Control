@@ -1,0 +1,28 @@
+# Local environments and operating-system files
+.venv/
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Secrets belong on the device, never in version control.
+.env
+.env.*
+!configs/assistant.env.example
+
+# Raw, derived, and personal audio are obtained from the documented sources.
+data/raw/
+data/processed/
+data/cache/
+data/hpo/
+data/wake_word_raw/
+Music/
+
+# Local dashboard/deck working files and transient checkpoints.
+MEX2_Slides/
+checkpoints/
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/

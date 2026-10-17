@@ -1,0 +1,42 @@
+# Compact candidate after V3 established learnability. About 0.8M parameters,
+# selected by validation loss for threshold-calibrated binary wake detection.
+labels_config: configs/astra_nova_labels.yaml
+model:
+  family: cnn
+  features: logmel
+  n_mels: 40
+  conv_channels: [8, 16, 32]
+  dropout: 0.12
+data:
+  datasets:
+    - {name: astra_nova, path: data/processed/astra_nova_v2}
+  split:
+    method: official
+    seed: 20261002
+    feature_cache: {enabled: true, path: data/cache/astra_nova_v2_logmel}
+training:
+  seed: 20261002
+  epochs: 80
+  batch_size: 32
+  learning_rate: 0.001
+  optimizer: adam
+  weight_decay: 0.0001
+  early_stopping_patience: 20
+  selection_metric: val_loss
+  lr_scheduler: cosine
+  class_weight: none
+  sampling: balanced
+  gradient_clip_norm: 5.0
+  device: auto
+  num_workers: 0
+  augmentation: {enabled: false}
+  feature_augmentation: {enabled: false}
+output:
+  checkpoint_dir: models/checkpoints
+  results_dir: results/astra_nova
+  exp_id: ASTRA_NOVA_V4_COMPACT_LOCAL
+deployment:
+  # Chosen from live Mac testing; it is not the stricter offline FAR=5%
+  # calibration threshold recorded in models/astra_nova_v4_compact_threshold.json.
+  live_wake_threshold: 0.60
+  wake_confirmations: 1

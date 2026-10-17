@@ -1,0 +1,49 @@
+# Shared audio standard + feature-extraction configuration.
+#
+# IMPORTANT: training, evaluation, the Mac demo and the Raspberry Pi
+# inference all read these values. They must stay identical everywhere so
+# the feature tensor handed to the network is bit-for-bit comparable.
+# Change a value here and re-export the ONNX model if the shape changes.
+
+audio:
+  sample_rate: 16000          # Hz - all audio standardized to this
+  channels: 1                 # mono
+  dtype: float32              # internal representation
+  max_duration_sec: 3.0       # trim / pad every utterance to this length
+  normalize_peak: 0.98        # safe peak-normalization target (<= 1.0)
+  silence_rms: 0.005          # below this RMS the clip counts as SILENCE-ish
+
+features:
+  sample_rate: 16000
+  n_mels: 40                  # mel bins (kept small for a tiny model)
+  window_ms: 25               # analysis window
+  hop_ms: 10                  # hop between frames
+  n_fft: 512                  # FFT size (>= window)
+  fmin: 0
+  fmax: 8000                  # Nyquist for 16 kHz
+  log: true                   # log-compress the mel energies
+  pad_frames: true            # right-pad to a fixed frame count
+  # Fixed frame count derived from max_duration_sec so every sample has the
+  # same shape. Computed by features.py, but shown here for reference:
+  # frames = floor(max_duration * 1000 / hop_ms) = 300
+
+# Data augmentation (TRAINING ONLY - never applied to val/test).
+augmentation:
+  enabled: true
+  p: 0.5                      # probability any augment is applied at all
+  random_gain_db: 12.0        # +/- dB
+  time_shift_ms: 150          # +/- samples shifted
+  noise:
+    enabled: true
+    snr_db: [0, 20]           # random SNR range; actual ambient clips preferred
+    paths:                    # prepared ambient WAV chunks; optional at first setup
+      - data/processed/ambient_noise
+  speed_perturb:
+    enabled: false            # optional
+    factor: [0.9, 1.1]
+  pitch_perturb:
+    enabled: false            # optional
+    semitones: 3
+  reverb:
+    enabled: false            # optional
+    rt60_max: 0.4

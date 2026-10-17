@@ -1,0 +1,18 @@
+# Raspberry Pi runtime requirements (lightweight - NO PyTorch).
+#
+# The Pi runs the exported ONNX model with onnxruntime. Only the shared audio
+# + feature-extraction code and a mic library are needed.
+#
+# OS packages (install once, see README):
+#   sudo apt install -y python3 python3-venv libportaudio2 portaudio19-dev
+#
+# For GPIO control of real devices (optional):
+#   pip install RPi.GPIO
+
+numpy
+sounddevice
+soundfile
+librosa
+scipy
+onnxruntime
+PyYAML

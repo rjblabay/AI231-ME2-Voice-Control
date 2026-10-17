@@ -1,0 +1,3 @@
+class,precision,recall,f1
+ASTRA,0.5,1.0,0.6667
+NOT_WAKE,1.0,0.9841,0.992
