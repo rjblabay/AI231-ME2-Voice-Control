@@ -11,8 +11,10 @@ from __future__ import annotations
 
 import argparse
 import csv
+import subprocess
 import threading
 import time
+import wave
 from pathlib import Path
 
 import numpy as np
@@ -27,6 +29,33 @@ from src.wake_word import WakeWordInference
 WAKE_LABEL = "ASTRA"
 WAKE_BUNDLE = repo_root() / "models" / "macbook" / "ASTRA_CRNN_BIGRU_VERIFIER_20261016_184000"
 COMMAND_BUNDLE = repo_root() / "models" / "macbook" / "AI231_HPO_NOSAMPLER_20261016_210738"
+
+
+def _play_chime(kind: str) -> None:
+    """Generate once and play short, non-blocking feedback through Mac audio."""
+    cache = Path.home() / ".cache" / "me2-astra"
+    path = cache / f"{kind}.wav"
+    if not path.exists():
+        cache.mkdir(parents=True, exist_ok=True)
+        rate = 16_000
+        spec = {
+            "wake": ((523, 659), 0.15, 0.035),
+            "success": ((784, 988, 1319), 0.065, 0.0),
+            "expired": ((420, 280), 0.09, 0.0),
+        }[kind]
+        frequencies, length, pause = spec
+        pieces: list[np.ndarray] = []
+        for frequency in frequencies:
+            pieces.append(0.22 * np.sin(2 * np.pi * frequency * np.arange(int(rate * length)) / rate))
+            if pause:
+                pieces.append(np.zeros(int(rate * pause)))
+        tone = np.concatenate(pieces)
+        with wave.open(str(path), "wb") as out:
+            out.setnchannels(1)
+            out.setsampwidth(2)
+            out.setframerate(rate)
+            out.writeframes((np.clip(tone, -1, 1) * 32767).astype("<i2").tobytes())
+    subprocess.Popen(["afplay", str(path)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
 def _model_audio(raw: np.ndarray, capture_rate: int) -> np.ndarray:
@@ -72,6 +101,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--command-threshold", type=float, default=0.70, help="Reject uncertain command predictions")
     parser.add_argument("--cooldown-sec", type=float, default=1.5)
     parser.add_argument("--debug-wake", action="store_true")
+    parser.add_argument("--no-chimes", action="store_true", help="Disable local Mac wake/result sound effects")
     parser.add_argument("--list-devices", action="store_true")
     args = parser.parse_args(argv)
 
@@ -160,6 +190,8 @@ def main(argv: list[str] | None = None) -> int:
                     prediction = command.predict(_model_audio(completed_command, args.sample_rate))
                     print(f"[COMMAND] {_command_text(prediction.label, mapping)}")
                     print(f"          class={prediction.label} confidence={prediction.confidence:.1%} latency={prediction.latency_ms:.1f} ms")
+                    if not args.no_chimes:
+                        _play_chime("expired" if prediction.label in {"UNKNOWN", "OUT_OF_SCOPE"} else "success")
                     waiting_for_command = False
                     cooldown_until = time.perf_counter() + args.cooldown_sec
                     continue
@@ -182,6 +214,8 @@ def main(argv: list[str] | None = None) -> int:
                     positives = 0
                     waiting_for_command = True
                     print(f"[DETECTED] Astra ({score:.1%}). Speak your command now.")
+                    if not args.no_chimes:
+                        _play_chime("wake")
     except KeyboardInterrupt:
         print("\nStopped.")
     return 0
