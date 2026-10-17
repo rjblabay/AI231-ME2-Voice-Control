@@ -13,4 +13,8 @@ if [[ "${ME2_HEADLESS:-0}" != "1" ]] && command -v chromium >/dev/null 2>&1; the
   DISPLAY="$PI_DISPLAY" XAUTHORITY="${XAUTHORITY:-$HOME/.Xauthority}" \
     chromium --kiosk --noerrdialogs http://127.0.0.1:8000 >/tmp/me2-astra-browser.log 2>&1 &
 fi
-exec "$ROOT/.venv/bin/python" -m app.raspberry_pi.voice_controller --device 1 --mode push --wake-command-delay-sec 0.75 --command-threshold 0.0 --wake-threshold 0.65 --wake-confirmations 3
+# USB/ALSA indices can change after a reboot or reconnect. Override with
+# ME2_MIC_DEVICE=N after checking --list-devices; keep the established value
+# as the default for the current Pi setup.
+MIC_DEVICE="${ME2_MIC_DEVICE:-1}"
+exec "$ROOT/.venv/bin/python" -m app.raspberry_pi.voice_controller --device "$MIC_DEVICE" --mode push --wake-command-delay-sec 0.75 --command-threshold 0.0 --wake-threshold 0.65 --wake-confirmations 3

@@ -53,7 +53,13 @@ def command_chime(success: bool):
 
 def _state(**values):
     STATE.parent.mkdir(parents=True, exist_ok=True)
-    old = json.loads(STATE.read_text()) if STATE.exists() else {}
+    # A previous process can be interrupted while writing this lightweight
+    # dashboard state file. Treat an empty/corrupt file as fresh state rather
+    # than preventing the microphone listener from starting.
+    try:
+        old = json.loads(STATE.read_text(encoding="utf-8")) if STATE.exists() else {}
+    except (OSError, json.JSONDecodeError):
+        old = {}
     old.update(values); old["updated_at"] = time.strftime("%H:%M:%S")
     STATE.write_text(json.dumps(old), encoding="utf-8")
 
